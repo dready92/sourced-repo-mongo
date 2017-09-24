@@ -250,7 +250,7 @@ Repository.prototype._commitAllSnapshots = function _commitAllSnapshots (entitie
 
 Repository.prototype._deserialize = function _deserialize (id, snapshot, events) {
   log('deserializing %s entity ', this.entityType.name);
-  var entity = new this.entityType(snapshot, events);
+  var entity = new this.entityType().init(snapshot, events);
   entity.id = id;
   return entity;
 };
